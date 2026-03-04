@@ -12,11 +12,11 @@ def _filter_pkw(stream_element: tuple) -> bool:
         return True
     return False
 
-def _key_by_lane(stream_element: tuple) -> int:
+def _key_by_lane(stream_element: tuple) -> float:
     return stream_element[0]
 
-def _get_velocity(stream_element: tuple) -> float:
-    return stream_element[1]
+def _get_velocity(stream_element: tuple) -> tuple:
+    return (stream_element[0][1],stream_element[1])
 
 def _get_max(velocity_1: float, velocity_2: float) -> float:
     if velocity_1 > velocity_2:

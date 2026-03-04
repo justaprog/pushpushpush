@@ -1,6 +1,6 @@
 import pytest
 
-from pipelines.transform_autobahn import pkw_max_velocity_per_lane, lkw_ratio, lane_2_min_mean_velocity_100_cars
+from pushpushpush.pipelines.transform_autobahn import pkw_max_velocity_per_lane, lkw_ratio, lane_2_min_mean_velocity_100_cars
 # the old solutions got full points, but not very elegant, so we can use them to test our refactored code
 import _old_solutions
 
@@ -14,7 +14,7 @@ def test_pkw_max_velocity_per_lane():
     for s, e in zip(start, end):
         input_stream = TimedStream()
         input_stream.from_csv(data_fpath, s, e)
-        assert pkw_max_velocity_per_lane(input_stream) == _old_solutions.pkw_max_velocity_per_lane(input_stream)
+        assert pkw_max_velocity_per_lane(input_stream).map(lambda x: x[0]) == _old_solutions.pkw_max_velocity_per_lane(input_stream)
 
 def test_pkw_max_velocity_per_lane_empty():
     start = [0, 100, 300]
