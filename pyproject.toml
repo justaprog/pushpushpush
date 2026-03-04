@@ -1,0 +1,22 @@
+[project]
+name = "data-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "isda-streaming>=1.2.0",
+    "pytest>=9.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+]
+
+# add "src" to the list of directories to search for packages
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

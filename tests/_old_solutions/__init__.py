@@ -1,0 +1,6 @@
+from _old_solutions.a1 import pkw_max_velocity_per_lane
+from _old_solutions.a2 import lkw_ratio
+from _old_solutions.a3 import lane_2_min_mean_velocity_100_cars
+from _old_solutions.a4 import traffic_density
+from _old_solutions.a5 import query_brand_and_lane
+from _old_solutions.a6 import query_brand_above_130
