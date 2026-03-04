@@ -30,8 +30,8 @@ class TimedStreamNew(TimedStream):
         A `key_by_function` divides a stream into disjoint partitions. All records with
         the same key are assigned to one partition.
 
-        This function add timestamp to each element in the stream, 
-        so the result is a KeyedStream with element and timestamp.
+        This function adds timestamp to each element in the stream. The timestamp 
+        is the same as the timestamp of the original element in the stream.
         """
         result = KeyedStream()
         for i in range(len(self._stream)):
