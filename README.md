@@ -10,6 +10,15 @@ Pushpushpush is a real-time observability platform using isda_streaming, InfluxD
 ```bash
 docker-compose up -d
 ```
+2. Create an admin token for InfluxDB to grant access to the database:
+```bash
+# With Docker — in a new terminal:
+docker exec -it influxdb3 influxdb3 create token --admin
+```
+- Store the generated token in .env file:
+```bash
+INFLUXDB3_AUTH_TOKEN="your_generated_token_here"
+```
 
 ## Testing
 To run the tests, use the following command:
