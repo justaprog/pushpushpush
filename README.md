@@ -29,6 +29,13 @@ INFLUXDB3_AUTH_TOKEN="your_generated_token_here"
 }
 ```
 - This can be configured via the ui as well. [See more](https://docs.influxdata.com/influxdb3/explorer/install/?t=Docker+Compose)
+
+## Usage
+To run the example script that writes `pkw_max_velocity_per_lane` data to InfluxDB, use the following command:
+```bash
+uv run python scripts/write_max_vel_autobahn.py
+```
+![alt text](data/pictures/pkw_max_velocity_per_lane.png)
 ## Testing
 To run the tests, use the following command:
 ```bash
