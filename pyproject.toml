@@ -5,8 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "influxdb3-python>=0.18.0",
     "isda-streaming>=1.2.0",
+    "pandas>=2.3.3",
     "pytest>=9.0.2",
+    "python-dotenv>=1.2.2",
 ]
 
 [build-system]
