@@ -15,7 +15,7 @@ def _filter_pkw(stream_element: tuple) -> bool:
 def _key_by_lane(stream_element: tuple) -> float:
     return stream_element[0]
 
-def _get_velocity(stream_element: tuple) -> tuple:
+def _get_velocity_and_ts(stream_element: tuple) -> tuple:
     return (stream_element[0][1],stream_element[1])
 
 def _get_max(velocity_1: float, velocity_2: float) -> float:

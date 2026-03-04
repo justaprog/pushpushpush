@@ -7,7 +7,7 @@ from isda_streaming.data_stream import (
     StreamError, 
 )
 
-from .utils import (_filter_pkw, _key_by_lane, _get_velocity, _get_max,
+from .utils import (_filter_pkw, _key_by_lane, _get_velocity_and_ts, _get_max,
                              _filter_lane_1_and_2, _map_lkw_to_count, 
                              _count_lkw_count_all, _cal_percent,
                              _filter_lane_2, _cal_mean_velocity)
@@ -52,7 +52,7 @@ def pkw_max_velocity_per_lane(input_stream: TimedStream) -> KeyedStream:
     """
     lkw_stream = TimedStreamNew(input_stream.filter(_filter_pkw))
     return (lkw_stream.key_by(_key_by_lane)
-            .map(_get_velocity)
+            .map(_get_velocity_and_ts)
             .reduce(_get_max))
 
 def lkw_ratio(input_stream: TimedStream) -> KeyedStream:
