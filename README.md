@@ -19,7 +19,16 @@ docker exec -it influxdb3 influxdb3 create token --admin
 ```bash
 INFLUXDB3_AUTH_TOKEN="your_generated_token_here"
 ```
-
+3. Optional: Pre-configure the database connection in `config/config.json` for the explorer:
+```json
+{
+  "DEFAULT_INFLUX_SERVER": "http://influxdb3:8181",
+  "DEFAULT_INFLUX_DATABASE": "testdb",
+  "DEFAULT_API_TOKEN": "your_generated_token_here",
+  "DEFAULT_SERVER_NAME": "Local InfluxDB 3"
+}
+```
+- This can be configured via the ui as well. [See more](https://docs.influxdata.com/influxdb3/explorer/install/?t=Docker+Compose)
 ## Testing
 To run the tests, use the following command:
 ```bash
